@@ -55,10 +55,10 @@ def ReadPolygon( filename ) :
 #    point b_i^k from the De Casteljau algorithm.
 #
 def DeCasteljau( BezierPts, k, i, t ) :
-    pass
-    #########
-    ## TODO : Implement the De Casteljau algorithm.
-    #########
+    if k == 0:
+        return BezierPts[i]
+    else:
+        return (1-t)*DeCasteljau(BezierPts,k-1,i,t) + t*DeCasteljau(BeizierPts,k-1,i+1) 
 
 
 #-------------------------------------------------
