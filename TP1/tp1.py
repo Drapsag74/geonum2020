@@ -80,14 +80,9 @@ def BezierCurve( BezierPts, N ) :
     # initialize curvepoints as zeros
     CurvePts = np.zeros([N,2])
     
-    #########
-    ## TODO : Compute N curve points for t varying uniformly in [0.0,1.0]
-    #########
-    #
-    # hint1:
-    # to generate the uniform sampling of the interval [0.0,1.0] with N elements, use:
-    # >> samples = np.linspace(0.0,1.0,num=N)
-    #
+    samples = np.linspace(0.0,1.0,num=N)
+    for k in range(N):
+        CurvePts[i]=DeCasteljau(BezierPts, degree, 0, samples[i])
     
     #
     # hint2:
